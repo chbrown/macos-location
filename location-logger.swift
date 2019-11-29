@@ -1,7 +1,7 @@
 import Cocoa
 import CoreLocation
 
-let newline = Data(bytes: [0x0A] as [UInt8])
+let newline = Data([0x0A] as [UInt8])
 
 /**
 Write the given string to the specified FileHandle.
