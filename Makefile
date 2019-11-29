@@ -1,5 +1,8 @@
 all: location-logger
 
+clean:
+	rm -f location-logger
+
 location-logger: location-logger.swift
 	xcrun -sdk macosx swiftc $< -O -o $@
 
