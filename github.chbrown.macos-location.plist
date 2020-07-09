@@ -16,6 +16,6 @@
       <false/>
     </dict>
     <key>StandardOutPath</key>
-    <string>/var/log/location.log</string>
+    <string>/usr/local/var/log/location.log</string>
   </dict>
 </plist>

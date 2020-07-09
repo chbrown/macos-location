@@ -23,9 +23,11 @@ Type Ctrl-C to exit.
 
 Prepare output location:
 
-    sudo touch /var/log/location.log
-    sudo chown $USER:staff /var/log/location.log
-    chmod g+w /var/log/location.log
+    mkdir -p /usr/local/var/log
+
+If that fails, fix permissions (and then run the `mkdir` command again):
+
+    sudo chown -R $USER:staff /usr/local/var/log/location.log
 
 Install as user-level LaunchAgent and load for immediate use with `launchctl`:
 
@@ -38,10 +40,11 @@ Install as user-level LaunchAgent and load for immediate use with `launchctl`:
 Edit `/usr/local/etc/telegraf.conf` and add the following [tail plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/tail) configuration:
 
     [[inputs.tail]]
-      files = ["/var/log/location.log"]
+      files = ["/usr/local/var/log/location.log"]
       data_format = "influx"
 
 
 ## License
 
-Copyright © 2017 Christopher Brown. [MIT Licensed](https://chbrown.github.io/licenses/MIT/#2017).
+Copyright © 2017–2019 Christopher Brown.
+[MIT Licensed](https://chbrown.github.io/licenses/MIT/#2017-2019).
