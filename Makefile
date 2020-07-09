@@ -8,3 +8,7 @@ location-logger: location-logger.swift
 
 install: location-logger
 	cp $< /usr/local/bin/location-logger
+
+test:
+	swiftformat --lint *.swift
+	swiftlint lint *.swift
